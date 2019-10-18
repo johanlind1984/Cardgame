@@ -16,10 +16,10 @@ public class DeckOfCards {
     public void createDeckofCards() {
          // Creates a deck of cards, values 2-14, 11 = jacks, 12 = queens, 13 = kings, 14 = Ace.
         for(int i=0; i <= 12; i++) {
-            this.deckofCards.add(new Card("Hearts", i+2));
-            this.deckofCards.add(new Card("Diamonds", i+2));
-            this.deckofCards.add(new Card("Clubs", i+2));
-            this.deckofCards.add(new Card("Spades", i+2));
+           deckofCards.add(new Card("Hearts", i+2));
+           deckofCards.add(new Card("Diamonds", i+2));
+           deckofCards.add(new Card("Clubs", i+2));
+           deckofCards.add(new Card("Spades", i+2));
         }
     }
 
@@ -49,22 +49,22 @@ public class DeckOfCards {
 
     public void printDeckOfCards() {
         // print all remaining cards of the deck
-        for (int i=0; i < this.deckofCards.size(); i++) {
-            System.out.println(this.deckofCards.get(i).getValueCard() + " of " + this.deckofCards.get(i).getSuite());
+        for (int i=0; i <deckofCards.size(); i++) {
+            System.out.println(this.deckofCards.get(i).getValueCard() + " of " +deckofCards.get(i).getSuite());
         }
     }
 
     public void burnTopCard() {
         // Burns the top card. Handy in games like Texas Hold Em.
-        Card returnCard = this.deckofCards.get(0);
-        this.deckofCards.remove(0);
+        Card returnCard = deckofCards.get(0);
+        deckofCards.remove(0);
         System.out.println("Card Burned");
     }
 
     public Card drawTopCard() {
         // Draws the top card from the deck, removes the card from the deck and return it.
-        Card returnCard = this.deckofCards.get(0);
-        this.deckofCards.remove(0);
+        Card returnCard = deckofCards.get(0);
+        deckofCards.remove(0);
         System.out.println("cardDrawn:" + returnCard.getValueCard() + " " + returnCard.getSuite());
 
         return returnCard;
@@ -73,9 +73,9 @@ public class DeckOfCards {
 
     public Card drawRandomCard() {
         // Draws a random card from the deck of cards, returns the card and removes the card from the deck.
-        int cardDrawn = (int) (Math.random() * ((this.deckofCards.size()-1)));
-        Card returnCard = this.deckofCards.get(cardDrawn);
-        this.deckofCards.remove(cardDrawn);
+        int cardDrawn = (int) (Math.random() * ((deckofCards.size()-1)));
+        Card returnCard = deckofCards.get(cardDrawn);
+        deckofCards.remove(cardDrawn);
         System.out.println("cardDrawn:" + returnCard.getValueCard() + " " + returnCard.getSuite());
 
         return returnCard;
