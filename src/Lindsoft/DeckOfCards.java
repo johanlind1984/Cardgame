@@ -1,6 +1,7 @@
 package Lindsoft;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 public class DeckOfCards {
 
@@ -29,15 +30,18 @@ public class DeckOfCards {
         int randomSlotInDeck=0;
         int counter = 0;
 
-        while(counter < this.deckofCards.size()-1) {
+        Random random = new Random();
 
-            for (int i = 0; i < this.deckofCards.size() - 1; i++) {
+        while (counter < deckofCards.size() - 1) {
 
-                Card shuffledCard = this.deckofCards.get(i);
-                this.deckofCards.remove(i);
-                this.deckofCards.add(shuffledCard);
-
+            for (int i = 0; i < deckofCards.size(); i++) {
+                int randomInteger = random.nextInt(52);
+                Card shuffledCard = deckofCards.get(randomInteger);
+                deckofCards.remove(randomInteger);
+                deckofCards.add(shuffledCard);
             }
+
+
             counter++;
         }
 
@@ -47,7 +51,6 @@ public class DeckOfCards {
         // print all remaining cards of the deck
         for (int i=0; i < this.deckofCards.size(); i++) {
             System.out.println(this.deckofCards.get(i).getValueCard() + " of " + this.deckofCards.get(i).getSuite());
-            System.out.println(i);
         }
     }
 
